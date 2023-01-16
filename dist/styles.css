@@ -1,0 +1,109 @@
+/*** *Styles Reset ***/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-white: #fff;
+    --current-day-bgClr: rgba(157, 157, 157, 0.6);
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*** *App Styles ***/
+
+.weather-app {
+    min-height: 100vh;
+    background-image: url('./assets/images/artistic-landscape-retro-art.jpg');
+    background-position: center;
+    background-size: auto 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-field {
+    padding-top: 1rem;
+    position: relative;
+}
+
+#search-locale {
+    border: 5px solid #fff;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: all 150ms;
+    padding: 0.25rem;
+    outline: none;
+}
+
+#search-locale::placeholder {
+    color: #000;
+}
+
+#search-locale:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+svg.search {
+    position: absolute;
+    right: 3px;
+    bottom: 7px;
+}
+
+/*** *Current-day Card Styles ***/
+
+.current-day-content {
+    margin-top: 3rem;
+    background-color: var(--current-day-bgClr);
+    border: 1px solid var(--current-day-bgClr);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 1.5rem 4rem;
+    color: #fff;
+    max-width: max-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conditions,
+.temp-high-low {
+    font-size: 2.5rem;
+}
+
+.temp-now {
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+
+
+.locale-name {
+    font-size: 1.5rem;
+}
+
+.temp-high::before {
+    content: "High: ";
+}
+
+.temp-high {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0.5rem;
+}
+
+.temp-low::before {
+    content: "Low: "
+}
+
+.date,
+.time {
+    font-size: 1.1rem;
+}

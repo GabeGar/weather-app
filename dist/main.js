@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("const weatherAppId = \"Q5SUE2QAE6NMSZHUXP3RQZ9DQ\";\n\nasync function getWeatherData(locale) {\n    try {\n        const response = await fetch(\n            `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locale}?key=${weatherAppId} `\n        );\n        const data = await response.json();\n        console.log(data);\n    } catch (err) {\n        console.log(err);\n    }\n}\n\n// getWeatherData(\"Toronto\");\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
