@@ -9,7 +9,7 @@
 
 :root {
     --font-white: #fff;
-    --current-day-bgClr: rgba(157, 157, 157, 0.6);
+    --current-day-bgClr: rgba(50, 50, 50, 0.7);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 
 .weather-app {
     min-height: 100vh;
-    background-image: url('./assets/images/artistic-landscape-retro-art.jpg');
+    background-image: url('./assets/images/artistic-landscape.jpg');
     background-position: center;
     background-size: auto 100%;
     display: flex;
@@ -81,7 +81,7 @@ svg.search {
 }
 
 .temp-now {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     padding-bottom: 1rem;
 }
 
@@ -106,4 +106,38 @@ svg.search {
 .date,
 .time {
     font-size: 1.1rem;
+}
+
+/*** *Coming Week Styles ***/
+
+.the-coming-week {
+    max-width: max-content;
+    margin: auto;
+    background-color: var(--current-day-bgClr);
+    border: 1px solid var(--current-day-bgClr);
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.upcoming.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: #fff;
+    font-weight: bold;
+}
+
+.upcoming-day-name,
+.upcoming-temp-high {
+    font-size: 1.5rem;
+}
+
+.upcoming.day img {
+    width: 60px;
+    height: 60px;
 }
