@@ -1,6 +1,6 @@
 import DomHandler from "./modules/domhandler.js";
-import { clearSearchField } from "./util/clearfield.js";
-import { handleErrorMsg } from "./util/errormessage.js";
+import { clearSearchField } from "./utils/clearfield.js";
+import { handleErrorMsg } from "./utils/errormessage.js";
 
 // Document Queries
 const searchBtn = document.querySelector(".search");

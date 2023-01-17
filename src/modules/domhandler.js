@@ -1,5 +1,5 @@
 import moment from "moment";
-import { getImgSrcByCondition } from "../util/conditions";
+import { getImgSrcByCondition } from "../utils/conditions";
 
 // WeatherApp Query
 const weatherApp = document.querySelector(".weather-app");
