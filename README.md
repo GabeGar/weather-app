@@ -1,9 +1,5 @@
 # weather-app
 
-_Dependencies_
-
-1. Moment.js
-
 _Goal_
 
 Build a weather app utilizing newly found knowledge, of promises + async & await.
@@ -14,6 +10,10 @@ _Skills Applied_
 2. Promises in "syntactic sugar" form -> Async functions & the Await keyword
 3. Fetch Api
 4. Javascript Object Notation (JSON)
+
+*Dependencies*
+
+1. Moment.js
 
 _Credits_
 
