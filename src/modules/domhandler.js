@@ -1,19 +1,16 @@
 import moment from "moment";
 import { getImgSrcByCondition } from "../utils/conditions";
 
-// WeatherApp Query
+// WeatherApp Container Query
 const weatherApp = document.querySelector(".weather-app");
+const loader = document.querySelector(".loader");
+
+const degreeSymbol = "°C";
 
 export default class DomHandler {
-    constructor() {
-        this.degreesArr = [" °C", " °F"];
-    }
-
     showDayData(data) {
         const allData = data;
         const dayData = data.days[0];
-
-        this.clearLocaleDisplay();
 
         const currentDayContainer = document.createElement("div");
         currentDayContainer.classList.add("current-day-content");
@@ -38,18 +35,18 @@ export default class DomHandler {
 
         const tempNow = document.createElement("p");
         tempNow.classList.add("temp-now");
-        tempNow.textContent = `${dayData.temp}${this.degreesArr[0]}`;
+        tempNow.textContent = `${dayData.temp} ${degreeSymbol}`;
 
         const tempHighLow = document.createElement("div");
         tempHighLow.classList.add("temp-high-low");
 
         const tempHigh = document.createElement("p");
         tempHigh.classList.add("temp-high");
-        tempHigh.textContent = `${dayData.tempmax}${this.degreesArr[0]}`;
+        tempHigh.textContent = `${dayData.tempmax} ${degreeSymbol}`;
 
         const tempLow = document.createElement("p");
         tempLow.classList.add("temp-low");
-        tempLow.textContent = `${dayData.tempmin}${this.degreesArr[0]}`;
+        tempLow.textContent = `${dayData.tempmin} ${degreeSymbol}`;
 
         tempHighLow.appendChild(tempHigh);
         tempHighLow.appendChild(tempLow);
@@ -80,11 +77,11 @@ export default class DomHandler {
         theUpcomingWeek.classList.add("the-coming-week");
 
         // Loop 7x to get the next 7 days of data from the obj
+        // Must start tap into index starting at 1, otherwise, i = 0 returns current day.
         for (let i = 1; i < 8; i++) {
             const upcomingDay = document.createElement("div");
             upcomingDay.classList.add("upcoming", "day");
 
-            // Upcoming Day p
             const upcomingDayName = document.createElement("p");
             upcomingDayName.classList.add("upcoming-day-name");
             upcomingDayName.textContent = `${moment()
@@ -93,11 +90,11 @@ export default class DomHandler {
 
             const upcomingDayTempH = document.createElement("p");
             upcomingDayTempH.classList.add("upcoming-temp-high");
-            upcomingDayTempH.textContent = `${upcomingDays[i].tempmax}${this.degreesArr[0]}`;
+            upcomingDayTempH.textContent = `${upcomingDays[i].tempmax} ${degreeSymbol}`;
 
             const upcomingDayTempL = document.createElement("p");
             upcomingDayTempL.classList.add("upcoming-temp-low");
-            upcomingDayTempL.textContent = `${upcomingDays[i].tempmin}${this.degreesArr[0]}`;
+            upcomingDayTempL.textContent = `${upcomingDays[i].tempmin} ${degreeSymbol}`;
 
             const imgContainer = document.createElement("p");
             const img = document.createElement("img");
@@ -116,7 +113,15 @@ export default class DomHandler {
         weatherApp.appendChild(theUpcomingWeek);
     }
 
-    clearLocaleDisplay() {
+    showLoader() {
+        loader.classList.remove("loader--hidden");
+    }
+
+    hideLoader() {
+        loader.classList.add("loader--hidden");
+    }
+
+    clearDisplay() {
         weatherApp.textContent = "";
     }
 }
