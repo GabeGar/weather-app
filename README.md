@@ -6,11 +6,12 @@ _Dependencies_
 
 _Goal_
 
-A weather app utilizing newly found knowledge of promises + async & await
+Build a weather app utilizing newly found knowledge, of promises + async & await.
 
 _Skills Applied_
 
-1. Promises in the form of async functions and the await keywords
+1. Promises
+2. Promises in "syntactic sugar" form -> Async functions & the Await keyword
 
 _Credits_
 
