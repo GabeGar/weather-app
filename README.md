@@ -12,6 +12,8 @@ _Skills Applied_
 
 1. Promises
 2. Promises in "syntactic sugar" form -> Async functions & the Await keyword
+3. Fetch Api
+4. Javascript Object Notation (JSON)
 
 _Credits_
 
