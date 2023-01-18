@@ -77,7 +77,7 @@ export default class DomHandler {
         theUpcomingWeek.classList.add("the-coming-week");
 
         // Loop 7x to get the next 7 days of data from the obj
-        // Must start tap into index starting at 1, otherwise, i = 0 returns current day.
+        // Must tap into index starting at 1, otherwise, i = 0 returns current day.
         for (let i = 1; i < 8; i++) {
             const upcomingDay = document.createElement("div");
             upcomingDay.classList.add("upcoming", "day");
