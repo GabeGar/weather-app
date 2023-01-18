@@ -16,30 +16,32 @@ const weatherAppId = "Q5SUE2QAE6NMSZHUXP3RQZ9DQ";
 
 // Main Function
 async function getWeatherDataAndDisplay(e) {
-    if (e.key !== "Enter") return;
+    if (e.type === "click" || e.key === "Enter") {
+        const locale = searchField.value;
+        const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locale}?key=${weatherAppId}&iconSet=icons2&unitGroup=metric`;
 
-    const locale = searchField.value;
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locale}?key=${weatherAppId}&iconSet=icons2&unitGroup=metric`;
+        try {
+            const response = await fetch(url);
 
-    try {
-        const response = await fetch(url);
-
-        if (response.status !== 200) {
-            handleErrorMsg(response);
-            clearSearchField();
-        } else {
-            const data = await response.json();
-            domHandler.clearDisplay();
-            domHandler.showLoader();
-            timeOut(1000).then(() => {
-                domHandler.hideLoader();
-                domHandler.showDayData(data);
-                domHandler.showUpcomingWeekData(data);
+            if (response.status !== 200) {
+                handleErrorMsg(response);
                 clearSearchField();
-            });
+            } else {
+                const data = await response.json();
+                domHandler.clearDisplay();
+                domHandler.showLoader();
+                timeOut(1000).then(() => {
+                    domHandler.hideLoader();
+                    domHandler.showDayData(data);
+                    domHandler.showUpcomingWeekData(data);
+                    clearSearchField();
+                });
+            }
+        } catch (err) {
+            console.error(err);
         }
-    } catch (err) {
-        console.error(err);
+    } else {
+        return;
     }
 }
 
