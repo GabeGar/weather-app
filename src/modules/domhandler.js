@@ -19,9 +19,7 @@ export default class DomHandler {
         currentImgContainer.classList.add("curr-image-container");
 
         const image = document.createElement("img");
-        // NEED A WAY TO TAP INTO IMAGES AND LINK THEIR PATHS HERE BASED ON DAY CONDITIONS.
-        image.src = `${getImgSrcByCondition(dayData.icon)}`;
-
+        image.src = `${getImgSrcByCondition(allData.currentConditions.icon)}`;
         image.alt = "Current day's weather condition icon";
         currentImgContainer.appendChild(image);
 
@@ -76,8 +74,6 @@ export default class DomHandler {
         const theUpcomingWeek = document.createElement("div");
         theUpcomingWeek.classList.add("the-coming-week");
 
-        // Loop 7x to get the next 7 days of data from the obj
-        // Must tap into index starting at 1, otherwise, i = 0 returns current day.
         for (let i = 1; i < 8; i++) {
             const upcomingDay = document.createElement("div");
             upcomingDay.classList.add("upcoming", "day");
