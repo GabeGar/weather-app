@@ -19,7 +19,7 @@ export default class DomHandler {
         currentImgContainer.classList.add("curr-image-container");
 
         const image = document.createElement("img");
-        image.src = `${getImgSrcByCondition(allData.currentConditions.icon)}`;
+        image.src = `${getImgSrcByCondition(dayData.icon)}`;
         image.alt = "Current day's weather condition icon";
         currentImgContainer.appendChild(image);
 
