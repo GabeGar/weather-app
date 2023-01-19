@@ -5,7 +5,7 @@ import { getImgSrcByCondition } from "../utils/conditions";
 const weatherApp = document.querySelector(".weather-app");
 const loader = document.querySelector(".loader");
 
-const degreeSymbol = "°C";
+let degreeSymbol;
 
 export default class DomHandler {
     showDayData(data) {
@@ -123,5 +123,11 @@ export default class DomHandler {
 
     clearDisplay() {
         weatherApp.textContent = "";
+    }
+
+    setDegreeSymbol(unitChosen) {
+        return unitChosen === "us"
+            ? (degreeSymbol = "°F")
+            : (degreeSymbol = "°C");
     }
 }
