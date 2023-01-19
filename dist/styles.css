@@ -197,6 +197,7 @@ svg.search {
     right: 0;
     top: 0;
     transition: .4s;
+    font-weight: bold;
 }
 
 .slider::before {
@@ -208,6 +209,7 @@ svg.search {
     position: absolute;
     transition: .4s;
     width: 26px;
+    text-align: center;
 }
 
 input:is(:checked)+.slider::before {
@@ -219,6 +221,7 @@ input:is(:checked)+.slider::before {
     position: absolute;
     transition: .4s;
     width: 26px;
+    text-align: center;
 }
 
 
