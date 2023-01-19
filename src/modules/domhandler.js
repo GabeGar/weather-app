@@ -19,13 +19,13 @@ export default class DomHandler {
         currentImgContainer.classList.add("curr-image-container");
 
         const image = document.createElement("img");
-        image.src = `${getImgSrcByCondition(dayData.icon)}`;
+        image.src = `${getImgSrcByCondition(allData.currentConditions.icon)}`;
         image.alt = "Current day's weather condition icon";
         currentImgContainer.appendChild(image);
 
         const conditions = document.createElement("p");
         conditions.classList.add("conditions");
-        conditions.textContent = `${dayData.conditions}`;
+        conditions.textContent = `${allData.currentConditions.conditions}`;
 
         const localeName = document.createElement("p");
         localeName.classList.add("locale-name");
@@ -51,7 +51,7 @@ export default class DomHandler {
 
         const date = document.createElement("p");
         date.classList.add("date");
-        date.textContent = moment().format("MMMM, Do YYYY");
+        date.textContent = moment().format("ddd, MMMM Do, YYYY");
 
         const time = document.createElement("p");
         time.classList.add("time");
@@ -73,6 +73,13 @@ export default class DomHandler {
 
         const theUpcomingWeek = document.createElement("div");
         theUpcomingWeek.classList.add("the-coming-week");
+
+        const upcomingWeekTitle = document.createElement("div");
+        upcomingWeekTitle.textContent = "The next few days";
+        upcomingWeekTitle.classList.add("upcoming");
+        upcomingWeekTitle.classList.add("title");
+
+        theUpcomingWeek.appendChild(upcomingWeekTitle);
 
         for (let i = 1; i < 8; i++) {
             const upcomingDay = document.createElement("div");
