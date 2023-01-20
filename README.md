@@ -10,6 +10,7 @@ Build a weather app utilizing newly found knowledge, of promises + async & await
 2. Promises in "syntactic sugar" form -> Async functions & the Await keyword
 3. Fetch Api
 4. Javascript Object Notation (JSON)
+5. Error Handling with try/catch
 
 **_Dependencies_**
 
