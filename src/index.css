@@ -20,7 +20,7 @@ body {
 /*** *App Styles ***/
 
 .content-wrapper {
-    background-image: url('./assets/images/artistic-landscape.jpg');
+    background-image: url('../public/images/artistic-landscape.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,7 +58,6 @@ body {
 
 .error-msg {
     position: absolute;
-    opacity: 0;
     padding: .25rem;
     background-color: var(--current-day-bgClr);
     border: 1px solid var(--current-day-bgClr);
@@ -67,10 +66,6 @@ body {
     border-radius: 0 0 5px 5px;
     transition: all 200ms ease-in-out;
     font-weight: bold;
-}
-
-.error-msg.show {
-    opacity: 1;
 }
 
 svg.search {
@@ -135,6 +130,8 @@ svg.search {
 .date,
 .time {
     font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
 }
 
 /*** *Coming Week Styles ***/
@@ -196,8 +193,9 @@ svg.search {
 }
 
 .slider-container {
-    margin: 1rem 0 0 0;
-    position: relative;
+    margin: 1rem 0 .25rem 0;
+    display: flex;
+    justify-content: center;
 }
 
 .slider {
@@ -271,11 +269,6 @@ input:checked+.slider:before {
     pointer-events: none;
     transition: opacity 0.75s, visibility 0.75s;
     z-index: 1;
-}
-
-.loader--hidden {
-    opacity: 0;
-    visibility: hidden;
 }
 
 .loader::after {

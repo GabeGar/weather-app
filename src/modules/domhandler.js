@@ -8,65 +8,65 @@ const loader = document.querySelector(".loader");
 let degreeSymbol;
 
 export default class DomHandler {
-    showDayData(data) {
-        const allData = data;
-        const dayData = data.days[0];
+    // showDayData(data) {
+    //     const allData = data;
+    //     const dayData = data.days[0];
 
-        const currentDayContainer = document.createElement("div");
-        currentDayContainer.classList.add("current-day-content");
+    //     const currentDayContainer = document.createElement("div");
+    //     currentDayContainer.classList.add("current-day-content");
 
-        const currentImgContainer = document.createElement("p");
-        currentImgContainer.classList.add("curr-image-container");
+    //     const currentImgContainer = document.createElement("p");
+    //     currentImgContainer.classList.add("curr-image-container");
 
-        const image = document.createElement("img");
-        image.src = `${getImgSrcByCondition(allData.currentConditions.icon)}`;
-        image.alt = "Current day's weather condition icon";
-        currentImgContainer.appendChild(image);
+    //     const image = document.createElement("img");
+    //     image.src = `${getImgSrcByCondition(allData.currentConditions.icon)}`;
+    //     image.alt = "Current day's weather condition icon";
+    //     currentImgContainer.appendChild(image);
 
-        const conditions = document.createElement("p");
-        conditions.classList.add("conditions");
-        conditions.textContent = `${allData.currentConditions.conditions}`;
+    //     const conditions = document.createElement("p");
+    //     conditions.classList.add("conditions");
+    //     conditions.textContent = `${allData.currentConditions.conditions}`;
 
-        const localeName = document.createElement("p");
-        localeName.classList.add("locale-name");
-        localeName.textContent = `${allData.resolvedAddress.toUpperCase()}`;
+    //     const localeName = document.createElement("p");
+    //     localeName.classList.add("locale-name");
+    //     localeName.textContent = `${allData.resolvedAddress.toUpperCase()}`;
 
-        const tempNow = document.createElement("p");
-        tempNow.classList.add("temp-now");
-        tempNow.textContent = `${dayData.temp} ${degreeSymbol}`;
+    //     const tempNow = document.createElement("p");
+    //     tempNow.classList.add("temp-now");
+    //     tempNow.textContent = `${dayData.temp} ${degreeSymbol}`;
 
-        const tempHighLow = document.createElement("div");
-        tempHighLow.classList.add("temp-high-low");
+    //     const tempHighLow = document.createElement("div");
+    //     tempHighLow.classList.add("temp-high-low");
 
-        const tempHigh = document.createElement("p");
-        tempHigh.classList.add("temp-high");
-        tempHigh.textContent = `${dayData.tempmax} ${degreeSymbol}`;
+    //     const tempHigh = document.createElement("p");
+    //     tempHigh.classList.add("temp-high");
+    //     tempHigh.textContent = `${dayData.tempmax} ${degreeSymbol}`;
 
-        const tempLow = document.createElement("p");
-        tempLow.classList.add("temp-low");
-        tempLow.textContent = `${dayData.tempmin} ${degreeSymbol}`;
+    //     const tempLow = document.createElement("p");
+    //     tempLow.classList.add("temp-low");
+    //     tempLow.textContent = `${dayData.tempmin} ${degreeSymbol}`;
 
-        tempHighLow.appendChild(tempHigh);
-        tempHighLow.appendChild(tempLow);
+    //     tempHighLow.appendChild(tempHigh);
+    //     tempHighLow.appendChild(tempLow);
 
-        const date = document.createElement("p");
-        date.classList.add("date");
-        date.textContent = moment().format("ddd, MMMM Do, YYYY");
+    //     const date = document.createElement("p");
+    //     date.classList.add("date");
+    //     date.textContent = moment().format("ddd, MMMM Do, YYYY");
 
-        const time = document.createElement("p");
-        time.classList.add("time");
-        time.textContent = moment().format("LTS");
+    //     const time = document.createElement("p");
+    //     time.classList.add("time");
+    //     time.textContent = moment().format("LTS");
 
-        currentDayContainer.appendChild(currentImgContainer);
-        currentDayContainer.appendChild(conditions);
-        currentDayContainer.appendChild(localeName);
-        currentDayContainer.appendChild(tempNow);
-        currentDayContainer.appendChild(tempHighLow);
-        currentDayContainer.appendChild(date);
-        currentDayContainer.appendChild(time);
+    //     currentDayContainer.appendChild(currentImgContainer);
+    //     currentDayContainer.appendChild(conditions);
+    //     currentDayContainer.appendChild(localeName);
+    //     currentDayContainer.appendChild(tempNow);
+    //     currentDayContainer.appendChild(tempHighLow);
+    //     currentDayContainer.appendChild(date);
+    //     currentDayContainer.appendChild(time);
 
-        weatherApp.appendChild(currentDayContainer);
-    }
+    //     weatherApp.appendChild(currentDayContainer);
+    // }
 
     showUpcomingWeekData(data) {
         const upcomingDays = data.days;

@@ -1,5 +1,5 @@
-export function getImgSrcByCondition(cond) {
-    const filePath = "./assets/icons/";
+function getImgSrcByCondition(cond) {
+    const filePath = "../../public/icons/";
 
     const conditions = {
         snow: "snow",
@@ -24,3 +24,5 @@ export function getImgSrcByCondition(cond) {
         return `${filePath}${conditions[cond]}.png`;
     }
 }
+
+export { getImgSrcByCondition };
