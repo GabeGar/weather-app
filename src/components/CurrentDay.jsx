@@ -1,15 +1,22 @@
 import { useWeather } from "../context/WeatherContext";
 import { getImgSrcByCondition } from "../utilities/weatherConditions.js";
+import { tempConverter } from "../utilities/tempConverter";
 import moment from "moment";
 
 import MomentClock from "./MomentClock";
-import { tempConverter } from "../utilities/tempConverter";
+import { useEffect } from "react";
 
 const CurrentDay = () => {
     const { weatherData, currentTempUnit, showConversion } = useWeather();
     const tempUnit = currentTempUnit === "us" ? "°F" : "°C";
 
     const dayData = weatherData?.days[0];
+
+    useEffect(() => {
+        document.querySelector("link").href = getImgSrcByCondition(
+            weatherData?.currentConditions?.icon
+        );
+    }, [weatherData?.currentConditions?.icon]);
 
     return (
         <div className="current-day-content">

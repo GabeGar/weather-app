@@ -6,10 +6,10 @@ const WeatherContext = createContext({
     weatherData: {},
     currentTempUnit: "",
     locale: "",
-    setLocale: () => {},
     isLoading: false,
     hasError: false,
     showConversion: false,
+    setLocale: () => {},
     setShowConversion: () => {},
     getWeatherData: () => {},
     setTempUnitGroup: () => {},
@@ -52,7 +52,7 @@ const WeatherContextProvider = ({ children }) => {
 
     useEffect(() => {
         const getTempWeatherData = async () => {
-            const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/florida?key=${WEATHER_APP_ID}&iconSet=icons2&unitGroup=${currentTempUnit}`;
+            const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/florida?key=${WEATHER_APP_ID}&iconSet=icons2&unitGroup=us`;
 
             try {
                 setIsLoading(true);
@@ -73,7 +73,7 @@ const WeatherContextProvider = ({ children }) => {
         };
 
         getTempWeatherData();
-    }, [currentTempUnit]);
+    }, []);
 
     return (
         <WeatherContext.Provider
