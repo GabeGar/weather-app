@@ -13,8 +13,8 @@ const ErrorMessage = () => {
 
     return (
         <p className={`error-msg ${isHidden ? "hidden" : ""}`}>
-            Bad request/Invalid String. Try the following: 1) City name 2) City
-            name, State 3) Country name 4) Zip Code
+            Bad request/Invalid locale entered. Try the following: 1) City name
+            2) City name, State 3) Country name 4) Zip Code
         </p>
     );
 };

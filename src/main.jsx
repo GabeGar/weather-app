@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import WeatherContextProvider from "./context/WeatherContext";
 import App from "./App";
 import "./index.css";
-import WeatherContextProvider from "./context/WeatherContext";
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
     <React.StrictMode>

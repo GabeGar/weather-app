@@ -3,12 +3,13 @@ import { getImgSrcByCondition } from "../utilities/weatherConditions.js";
 import moment from "moment";
 
 import MomentClock from "./MomentClock";
+import { tempConverter } from "../utilities/tempConverter";
 
 const CurrentDay = () => {
-    const { weatherData, tempUnitGroup } = useWeather();
+    const { weatherData, currentTempUnit, showConversion } = useWeather();
+    const tempUnit = currentTempUnit === "us" ? "°F" : "°C";
 
     const dayData = weatherData?.days[0];
-    const degreeSymbol = tempUnitGroup === "metric" ? "°C" : "°F";
 
     return (
         <div className="current-day-content">
@@ -26,13 +27,24 @@ const CurrentDay = () => {
             <p className="locale-name">
                 {`${weatherData?.resolvedAddress?.toUpperCase()}`}
             </p>
-            <p className="temp-now">{`${dayData?.temp} ${degreeSymbol}`}</p>
+            <p className="temp-now">
+                {!showConversion && `${dayData?.temp}`}
+                {showConversion &&
+                    tempConverter(dayData?.temp, currentTempUnit)}
+                {tempUnit}
+            </p>
             <div className="temp-high-low">
                 <p className="temp-high">
-                    {`${dayData?.tempmax} ${degreeSymbol}`}
+                    {!showConversion && `${dayData?.tempmax}`}
+                    {showConversion &&
+                        tempConverter(dayData?.tempmax, currentTempUnit)}
+                    {tempUnit}
                 </p>
                 <p className="temp-low">
-                    {`${dayData?.tempmin} ${degreeSymbol}`}
+                    {!showConversion && `${dayData?.tempmin}`}
+                    {showConversion &&
+                        tempConverter(dayData?.tempmin, currentTempUnit)}
+                    {tempUnit}
                 </p>
                 <p className="date">{moment().format("ddd, MMMM Do, YYYY")}</p>
                 <div className="time">

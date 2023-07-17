@@ -1,15 +1,12 @@
 import { useWeather } from "../context/WeatherContext";
 
-const CELSIUS_UNIT_GROUP = "metric";
-const FAHRENHEIT_UNIT_GROUP = "us";
-
 const TempSlider = () => {
-    const { tempUnitGroup, setTempUnitGroup } = useWeather();
+    const { currentTempUnit, setCurrentTempUnit, setShowConversion } =
+        useWeather();
 
     const handleChangeUnit = () => {
-        tempUnitGroup === FAHRENHEIT_UNIT_GROUP
-            ? setTempUnitGroup(CELSIUS_UNIT_GROUP)
-            : setTempUnitGroup(FAHRENHEIT_UNIT_GROUP);
+        setCurrentTempUnit((tempUnit) => (tempUnit === "us" ? "metric" : "us"));
+        setShowConversion((show) => !show);
     };
 
     return (
@@ -19,7 +16,7 @@ const TempSlider = () => {
                     type="checkbox"
                     id="checkbox"
                     onChange={handleChangeUnit}
-                    checked={tempUnitGroup === FAHRENHEIT_UNIT_GROUP}
+                    defaultChecked={currentTempUnit === "us"}
                 />
                 <div className="slider round"></div>
             </label>
