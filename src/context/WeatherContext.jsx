@@ -8,6 +8,9 @@ const WeatherContext = createContext({
     tempUnitGroup: "",
     isLoading: false,
     hasError: false,
+    setLocale: () => {},
+    getWeatherData: () => {},
+    setTempUnitGroup: () => {},
 });
 
 const WeatherContextProvider = ({ children }) => {

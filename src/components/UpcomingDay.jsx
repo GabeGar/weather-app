@@ -1,8 +1,7 @@
 import { useWeather } from "../context/WeatherContext";
 import { getImgSrcByCondition } from "../utilities/conditions";
-import moment from "moment";
 
-const UpcomingDay = ({ numDay }) => {
+const UpcomingDay = ({ numDay, dayName }) => {
     const { weatherData, tempUnitGroup } = useWeather();
 
     const upcomingDays = weatherData?.days;
@@ -10,9 +9,7 @@ const UpcomingDay = ({ numDay }) => {
 
     return (
         <div className="upcoming day">
-            <p className="upcoming-day-name">{`${moment()
-                .add(numDay, "d")
-                .format("dddd")}`}</p>
+            <p className="upcoming-day-name">{dayName}</p>
             <p className="upcoming-temp-high">
                 {`${upcomingDays[numDay].tempmax} ${degreeSymbol}`}
             </p>

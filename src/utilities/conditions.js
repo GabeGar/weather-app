@@ -1,4 +1,4 @@
-function getImgSrcByCondition(cond) {
+const getImgSrcByCondition = (cond) => {
     const filePath = "../../public/icons/";
 
     const conditions = {
@@ -23,6 +23,6 @@ function getImgSrcByCondition(cond) {
     if (cond === conditions[cond]) {
         return `${filePath}${conditions[cond]}.png`;
     }
-}
+};
 
 export { getImgSrcByCondition };

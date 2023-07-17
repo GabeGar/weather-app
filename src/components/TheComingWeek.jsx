@@ -1,4 +1,5 @@
 import UpcomingDay from "./UpcomingDay";
+import moment from "moment";
 
 const TheComingWeek = () => {
     return (
@@ -6,7 +7,17 @@ const TheComingWeek = () => {
             <h2 className="upcoming title">The next few days</h2>
 
             {Array.from({ length: 7 }).map((_, i) => {
-                return <UpcomingDay key={i + 1} numDay={i + 1} />;
+                const dayName = `${moment()
+                    .add(i + 1, "d")
+                    .format("dddd")}`;
+
+                return (
+                    <UpcomingDay
+                        key={dayName}
+                        numDay={i + 1}
+                        dayName={dayName}
+                    />
+                );
             })}
         </div>
     );
