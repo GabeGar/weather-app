@@ -11,7 +11,7 @@ import TheComingWeek from "./components/TheComingWeek";
 const App = () => {
     const { isLoading, weatherData } = useWeather();
 
-    if (Object.keys(weatherData).length === 0) return;
+    if (Object.keys(weatherData).length === 0) return <LoadingSpinner />;
 
     return (
         <div className="content-wrapper">

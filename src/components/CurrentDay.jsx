@@ -1,5 +1,5 @@
 import { useWeather } from "../context/WeatherContext";
-import { getImgSrcByCondition } from "../utilities/conditions";
+import { getImgSrcByCondition } from "../utilities/weatherConditions.js";
 import moment from "moment";
 
 import MomentClock from "./MomentClock";

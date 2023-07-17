@@ -1,5 +1,5 @@
 import { useWeather } from "../context/WeatherContext";
-import { getImgSrcByCondition } from "../utilities/conditions";
+import { getImgSrcByCondition } from "../utilities/weatherConditions.js";
 
 const UpcomingDay = ({ numDay, dayName }) => {
     const { weatherData, tempUnitGroup } = useWeather();

@@ -4,12 +4,12 @@ import moment from "moment";
 
 const MomentClock = () => {
     const [currentTimeClock, setCurrentTimeClock] = useState(() =>
-        moment().format("hh:mm:ss A")
+        moment().format("h:mm:ss A")
     );
 
     useEffect(() => {
         const clockTimer = setInterval(() => {
-            setCurrentTimeClock(() => moment().format("hh:mm:ss A"));
+            setCurrentTimeClock(() => moment().format("h:mm:ss A"));
         }, 1000);
 
         return () => clearInterval(clockTimer);

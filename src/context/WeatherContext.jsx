@@ -16,9 +16,11 @@ const WeatherContext = createContext({
 const WeatherContextProvider = ({ children }) => {
     const [weatherData, setWeatherData] = useState({});
     const [locale, setLocale] = useState("");
-    const [tempUnitGroup, setTempUnitGroup] = useState("metric");
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+
+    // * TempUnitGroup is a string that can have one of two values --- 'metric' for celsius || 'us' for fahrenheit.
+    const [tempUnitGroup, setTempUnitGroup] = useState("metric");
 
     const getWeatherData = async () => {
         if (locale.length <= 1) return;
