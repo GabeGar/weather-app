@@ -1,5 +1,5 @@
 const getImgSrcByCondition = (cond) => {
-    const filePath = "./icons/";
+    const filePath = "public/icons/";
 
     const conditions = {
         snow: "snow",
