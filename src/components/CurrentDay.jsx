@@ -16,7 +16,14 @@ const CurrentDay = () => {
         document.querySelector("link").href = getImgSrcByCondition(
             weatherData?.currentConditions?.icon
         );
-    }, [weatherData?.currentConditions?.icon]);
+        document.querySelector("title").textContent = `${
+            weatherData?.currentConditions?.conditions
+        } in ${weatherData?.resolvedAddress?.toUpperCase()}`;
+    }, [
+        weatherData?.currentConditions?.icon,
+        weatherData?.currentConditions?.conditions,
+        weatherData?.resolvedAddress,
+    ]);
 
     return (
         <div className="current-day-content">
