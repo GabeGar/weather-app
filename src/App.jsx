@@ -11,7 +11,8 @@ import TheComingWeek from "./components/TheComingWeek";
 const App = () => {
     const { isLoading, weatherData } = useWeather();
 
-    if (Object.keys(weatherData).length === 0) return <LoadingSpinner />;
+    if (Object.keys(weatherData).length === 0 || isLoading)
+        return <LoadingSpinner />;
 
     return (
         <div className="content-wrapper">
@@ -20,13 +21,10 @@ const App = () => {
                 <SearchField />
             </Header>
 
-            {isLoading && <LoadingSpinner />}
-            {!isLoading && (
-                <Weather>
-                    <CurrentDay />
-                    <TheComingWeek />
-                </Weather>
-            )}
+            <Weather>
+                <CurrentDay />
+                <TheComingWeek />
+            </Weather>
         </div>
     );
 };
