@@ -1,6 +1,6 @@
 # weather-app-v2
 
-## Updated Goal
+## Goal
 
 Weather App V2 is not actually a V2 app, visually. It is a rework of the source code,
 converting the project from vanilla JS, to ReactJS code for practice.
